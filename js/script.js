@@ -13,3 +13,21 @@ menu.btn.addEventListener('click', (e) => {
 		menu.line[i].classList.toggle('active');
 	}
 });
+
+let recipes = document.querySelector('.recipes');
+let scrollTop = document.querySelector('.scrollTopButton')
+
+scrollTop.addEventListener('click', function (e) { 
+	e.preventDefault;
+	window.scrollTo(0,0);
+});
+
+window.addEventListener('scroll', function() {
+	if (window.pageYOffset >= (recipes.offsetTop + recipes.clientHeight / 20)) {
+		scrollTop.classList.add('active');
+	} else {
+		scrollTop.classList.remove('active');
+	}
+});
+
+console.log(recipes.offsetTop);
